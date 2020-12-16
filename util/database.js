@@ -9,7 +9,7 @@ const mongoConnect = callback => {
     {useUnifiedTopology: true}
   )*/
   MongoClient.connect(
-    'mongodb+srv://b2bzoli67:Origami25@cluster0.63q8n.mongodb.net/shop?retryWrites=true&w=majority',
+    process.env.DB_HOST,
     {useUnifiedTopology: true, useNewUrlParser: true}
   )
     .then(client => {
