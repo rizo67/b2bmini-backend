@@ -23,11 +23,14 @@
     "jsonwebtoken": "^8.5.1",
     "mongodb": "^3.3.4",
     "multer": "^1.4.2",
+    "serverless-http": "^2.6.0",
+    "serverless-offline": "^6.8.0",
     "uuid": "^3.3.3",
     "validator": "^12.0.0",
     "vue-data-tables": "^3.4.5"
   },
   "devDependencies": {
-    "nodemon": "^1.19.4"
+    "nodemon": "^1.19.4",
+    "serverless-dotenv-plugin": "^3.1.0"
   }
 }

@@ -1,0 +1,41 @@
+service: b2bmini-backend
+provider:
+  name: aws
+  runtime: nodejs12.x
+  stage: dev
+  region: eu-central-1
+  memorySize: 256
+  timeout: 30
+functions:
+  app:
+    handler: index.handler
+    events: 
+      - http: 
+          path: /
+          method: ANY
+          cors:
+            origin: '*'
+            headers:
+              - Accept
+              - Content-Type
+              - User-Agent
+              - Referer
+              - Authorization
+              - something
+            allowCredentials: false
+      - http: 
+          path: /{proxy+}
+          method: ANY
+          cors:
+            origin: '*'
+            headers:
+              - Accept
+              - Content-Type
+              - User-Agent
+              - Referer
+              - Authorization
+              - something
+            allowCredentials: false
+plugins:
+  - serverless-offline
+  - serverless-dotenv-plugin
