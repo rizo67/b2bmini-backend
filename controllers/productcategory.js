@@ -220,8 +220,8 @@ try {
     try {
     const categories = await category.getOneId(keresid);
       //.then(categories => {        
-        fs.unlink(categories.imageUrl, 
-        err => console.log(err));
+        /*fs.unlink(categories.imageUrl, 
+        err => console.log(err));*/
         await category.deleteById(categories._id);
         //clearImage();
 
