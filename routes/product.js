@@ -20,6 +20,7 @@ router.post('/createcategory', isAuth, authadmin, productcategoryController.crea
 router.put('/updatecategory', isAuth, authadmin, productcategoryController.updateCategory); // POST /product/updatecategory
 router.post('/deletecategory', isAuth, authadmin, productcategoryController.deleteCategory); // POST /product/deletecategory
 router.put('/savecategoryimage', isAuth, authadmin, productcategoryController.categoryImage); // POST /product/savecategoryimage
+router.put('/savecategoryimageurl', isAuth, authadmin, productcategoryController.imgurlCategory); // POST /product/savecategoryimageurl
 router.post('/onecategory', isAuth, productcategoryController.getOneCategory);  // POST /product/onecategory
 router.get('/allbrands', isAuth, productbrandController.getBrands);  // POST /product/allbrands
 router.post('/createbrand', isAuth, authadmin, productbrandController.createBrand); // POST /product/createbrand

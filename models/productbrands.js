@@ -108,7 +108,6 @@ saveImage() {
   const db = getDb();
   let dbOp;
   if (this._id) {
-    // Update the product
     dbOp = db
       .collection('brands')
       .updateOne({ _id: this._id },

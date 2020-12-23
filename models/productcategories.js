@@ -108,11 +108,13 @@ saveImage() {
   const db = getDb();
   let dbOp;
   if (this._id) {
-    // Update the product
     dbOp = db
       .collection('categories')
       .updateOne({ _id: this._id },
-        {$set:{imageUrl:this.imageUrl,}}
+        {$set:{
+          imageUrl:this.imageUrl,
+          deleteimagename:this.deleteimagename,
+        }}
         );
   //} else {
     //dbOp = db.collection('categories').updateOne(
