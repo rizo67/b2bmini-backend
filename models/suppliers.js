@@ -113,11 +113,12 @@ saveImage() {
     dbOp = db
       .collection('suppliers')
       .updateOne({ _id: this._id },
-        {$set:{imageUrl:this.imageUrl,}}
+        {$set:{
+          imageUrl:this.imageUrl,
+          deleteimagename:this.deleteimagename,
+        }}
         );
-  
   }
-
   return dbOp
     .then(result => {
       console.log(result);

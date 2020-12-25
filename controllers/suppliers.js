@@ -218,6 +218,48 @@ exports.createSupplier = async (req, res, next) => {
       }
   };
 
+  exports.imgurlSupplier = async (req, res, next) => {
+    
+    const keresid = req.body.keresid;
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      const error = new Error('Validation failed, entered data is incorrect.');
+      error.statusCode = 422;
+      throw error;
+    }
+    
+    const imageUrl = req.body.image;
+    const deleteimagename = req.body.deleteimagename;
+    const _id = req.body._id;
+
+    const supplier = new Supplier();
+    try {
+    const suppliers = await supplier.getOneId(keresid)
+      //.then(brands => {
+        if (suppliers._id.toString() !== req.body.keresid.toString()) {
+          const error = new Error('Could not find post.');
+          error.statusCode = 404;
+          throw error;
+        }
+        supplier._id = new ObjectId(keresid);
+        supplier.imageUrl = imageUrl;
+        supplier.deleteimagename = deleteimagename;
+        console.log(imageUrl);
+      
+        const result = await supplier.saveImage();
+    
+      //.then(result => {
+        res.status(200).json({ message: 'Az adatok mentése sikeresen megtörtént!', posts: result });
+      }
+      catch(err) {
+        if (!err.statusCode) {
+          err.statusCode = 500;
+        }
+        next(err);
+      }
+  };
+
+
   exports.deleteSupplier = async (req, res, next) => {
     const keresid2 = req.body.keresid;
     const supplier = new Supplier();
