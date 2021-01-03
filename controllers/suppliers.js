@@ -272,8 +272,8 @@ exports.createSupplier = async (req, res, next) => {
           throw error;
           console.log(req.userId);
         }  
-        fs.unlink(suppliers.imageUrl, 
-        err => console.log(err));
+        /*fs.unlink(suppliers.imageUrl, 
+        err => console.log(err));*/
         const result = await supplier.deleteById(suppliers._id)
         //clearImage();
         //.then(result => {

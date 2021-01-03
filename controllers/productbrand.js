@@ -233,3 +233,13 @@ try {
       }
       catch(err) {console.log(err)}
   };
+
+  exports.deletejustimgBrand = async (req, res, next) => {
+    const keresid = req.body.keresid;
+    const brand = new Brand();
+    try {
+    const brands = await brand.getOneId(keresid);
+        res.status(200).json({ message: 'Az adatok törlése sikeresen megtörtént!', posts: brands });
+      }
+      catch(err) {console.log(err)}
+  };

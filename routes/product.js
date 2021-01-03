@@ -26,6 +26,7 @@ router.get('/allbrands', isAuth, productbrandController.getBrands);  // POST /pr
 router.post('/createbrand', isAuth, authadmin, productbrandController.createBrand); // POST /product/createbrand
 router.put('/updatebrand', isAuth, authadmin, productbrandController.updateBrand); // POST /product/updatebrand
 router.post('/deletebrand', isAuth, authadmin, productbrandController.deleteBrand); // POST /product/deletebrand
+router.post('/deljustimgbrand', isAuth, authadmin, productbrandController.deletejustimgBrand); // POST /product/deljustimgbrand
 router.put('/savebrandimage', isAuth, authadmin, productbrandController.brandImage); // POST /product/savebrandimage
 router.put('/savebrandimageurl', isAuth, authadmin, productbrandController.imgurlBrand); // POST /product/savebrandimageurl
 router.post('/onebrand', isAuth, productbrandController.getOneBrand);  // POST /product/onebrand
