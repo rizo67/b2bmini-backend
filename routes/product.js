@@ -16,6 +16,7 @@ router.put('/saveproductimage', isAuth, authadmin, productController.productImag
 router.put('/saveproductimageurl', isAuth, authadmin, productController.imgurlProduct); // POST /product/saveproductimageurl
 router.put('/updateproduct', isAuth, authadmin, productController.updateProduct); // POST /product/updateproduct
 router.post('/deleteproduct', isAuth, authadmin, productController.deleteProduct); // POST /product/deleteproduct
+router.post('/deljustimgproduct', isAuth, authadmin, productController.deletejustimgProduct); // POST /product/deljustimgproduct
 router.get('/allcategories', isAuth, productcategoryController.getCategories);  // POST /product/allcategories
 router.post('/createcategory', isAuth, authadmin, productcategoryController.createCategory); // POST /product/createcategory
 router.put('/updatecategory', isAuth, authadmin, productcategoryController.updateCategory); // POST /product/updatecategory

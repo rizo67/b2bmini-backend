@@ -267,8 +267,8 @@ exports.createProduct = async (req, res, next) => {
           throw error;
           console.log(req.userId);
         }  
-        fs.unlink(products.imageUrl, 
-        err => console.log(err));
+        /*fs.unlink(products.imageUrl, 
+        err => console.log(err));*/
         await product.deleteById(products._id)
         //clearImage();
         //.then(result => {
@@ -286,4 +286,14 @@ exports.createProduct = async (req, res, next) => {
         res.status(200).json({ message: 'Az adatok törlése sikeresen megtörtént!', posts: products });
       }
       catch(err) {console.log(err)}   
+  };
+
+  exports.deletejustimgProduct = async (req, res, next) => {
+    const keresid = req.body.keresid;
+    const product = new Product();
+    try {
+    const products = await product.getOneId(keresid);
+        res.status(200).json({ message: 'Az adatok törlése sikeresen megtörtént!', posts: brands });
+      }
+      catch(err) {console.log(err)}
   };
