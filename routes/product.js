@@ -13,6 +13,7 @@ const router = express.Router();
 router.post('/createproduct', isAuth, authadmin, productController.createProduct); // POST /product/createproduct
 router.get('/allproducts', isAuth, productController.getProducts);  // POST /product/allproducts
 router.put('/saveproductimage', isAuth, authadmin, productController.productImage); // POST /product/saveproductimage
+router.put('/saveproductimageurl', isAuth, authadmin, productController.imgurlProduct); // POST /product/saveproductimageurl
 router.put('/updateproduct', isAuth, authadmin, productController.updateProduct); // POST /product/updateproduct
 router.post('/deleteproduct', isAuth, authadmin, productController.deleteProduct); // POST /product/deleteproduct
 router.get('/allcategories', isAuth, productcategoryController.getCategories);  // POST /product/allcategories

@@ -213,6 +213,48 @@ exports.createProduct = async (req, res, next) => {
   //  fs.unlink(filePath, err => console.log(err));
   //};
 
+  exports.imgurlProduct = async (req, res, next) => {
+    
+    const keresid = req.body.keresid;
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      const error = new Error('Validation failed, entered data is incorrect.');
+      error.statusCode = 422;
+      throw error;
+    }
+    
+    const imageUrl = req.body.image;
+    const deleteimagename = req.body.deleteimagename;
+    const _id = req.body._id;
+
+    const product = new Product();
+    try {
+    const products = await product.getOneId(keresid)
+      //.then(brands => {
+        if (products._id.toString() !== req.body.keresid.toString()) {
+          const error = new Error('Could not find post.');
+          error.statusCode = 404;
+          throw error;
+        }
+        product._id = new ObjectId(keresid);
+        product.imageUrl = imageUrl;
+        product.deleteimagename = deleteimagename;
+        console.log(imageUrl);
+      
+        const result = await product.saveImage();
+    
+      //.then(result => {
+        res.status(200).json({ message: 'Az adatok mentése sikeresen megtörtént!', posts: result });
+      }
+      catch(err) {
+        if (!err.statusCode) {
+          err.statusCode = 500;
+        }
+        next(err);
+      }
+  };
+
+
   exports.deleteProduct = async (req, res, next) => {
     const keresproductid = req.body.keresid;
     const product = new Product();

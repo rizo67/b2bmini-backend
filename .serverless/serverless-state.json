@@ -181,7 +181,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/b2bmini-backend/dev/1608400874217-2020-12-19T18:01:14.217Z/b2bmini-backend.zip"
+                "S3Key": "serverless/b2bmini-backend/dev/1610206839687-2021-01-09T15:40:39.687Z/b2bmini-backend.zip"
               },
               "Handler": "index.handler",
               "Runtime": "nodejs12.x",
@@ -206,14 +206,14 @@
               "AppLogGroup"
             ]
           },
-          "AppLambdaVersion6JCWriX4IGQAyvySaDwORmodeijazYCi5u9JsHcF9VU": {
+          "AppLambdaVersiongQoCqUqUeFTPDZ52Gk0hwiMYhCtiLUZgY1qftVYsZ4": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "AppLambdaFunction"
               },
-              "CodeSha256": "QEQfe9WEBZ6vSDkwmexJHfmUb4xmYTwFL2x24FHXj3g="
+              "CodeSha256": "yG2R7WmytQaXnHOGgcWIW1Y6cBNjBP1CJYUw6+oTBaE="
             }
           },
           "ApiGatewayRestApi": {
@@ -425,7 +425,7 @@
               "MethodResponses": []
             }
           },
-          "ApiGatewayDeployment1608400850999": {
+          "ApiGatewayDeployment1610206815110": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -487,7 +487,7 @@
           "AppLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "AppLambdaVersion6JCWriX4IGQAyvySaDwORmodeijazYCi5u9JsHcF9VU"
+              "Ref": "AppLambdaVersiongQoCqUqUeFTPDZ52Gk0hwiMYhCtiLUZgY1qftVYsZ4"
             }
           },
           "ServiceEndpoint": {
@@ -661,7 +661,7 @@
         "timeout": 30,
         "runtime": "nodejs12.x",
         "vpc": {},
-        "versionLogicalId": "AppLambdaVersion6JCWriX4IGQAyvySaDwORmodeijazYCi5u9JsHcF9VU"
+        "versionLogicalId": "AppLambdaVersiongQoCqUqUeFTPDZ52Gk0hwiMYhCtiLUZgY1qftVYsZ4"
       }
     },
     "configValidationMode": "warn",
@@ -685,7 +685,7 @@
     "artifact": "C:\\ISL_PRO\\NodeServerRestApi\\.serverless\\b2bmini-backend.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/b2bmini-backend/dev/1608400874217-2020-12-19T18:01:14.217Z",
+    "artifactDirectoryName": "serverless/b2bmini-backend/dev/1610206839687-2021-01-09T15:40:39.687Z",
     "artifact": "b2bmini-backend.zip"
   }
 }

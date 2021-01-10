@@ -157,7 +157,10 @@ saveImage() {
     dbOp = db
       .collection('products')
       .updateOne({ _id: this._id },
-        {$set:{imageUrl:this.imageUrl,}}
+        {$set:{
+          imageUrl:this.imageUrl,
+          deleteimagename:this.deleteimagename
+        }}
         );
   //} else {
     //dbOp = db.collection('products').updateOne(
