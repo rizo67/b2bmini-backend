@@ -51,6 +51,8 @@ router.post('/loginuser', userController.loginUser);  // POST /feed/loginuser
 
 router.post('/findemail', userController.getOneEmail); // POST /feed/findemail
 
+router.post('/findloadeduser', userController.getLoadedUser); // POST /feed/findloadeduser
+
 router.get('/findadmins', isAuth, authadmin, userController.getAdminUsers); // POST /feed/findadmins
 
 router.put('/updateoneuser', isAuth, authadmin, feedController.updatePost);

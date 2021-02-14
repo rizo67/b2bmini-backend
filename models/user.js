@@ -110,6 +110,20 @@ getOneUser(keresoneuser) {
   });
 }
 
+getLoadedUser(keresid) {
+  const db = getDb();
+  return db
+  .collection('users')
+  .findOne({ _id: new ObjectId(keresid) })
+  .then(users => {
+    console.log(users);
+    return users;
+  })
+  .catch(err => {
+    console.log(err);
+  });
+}
+
 getOneId(keresid) {
   const db = getDb();
   return db

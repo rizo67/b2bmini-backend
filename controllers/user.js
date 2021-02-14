@@ -152,3 +152,20 @@ exports.signupUser = (req, res, next) => {
       next(err);
     }
   };  
+
+  exports.getLoadedUser = async (req, res, next) => {
+    const user = new User ();
+    try {
+    const result = await user.getLoadedUser(req.body.keresid);
+    //.then(result => {
+      res
+        .status(200)
+        .json({ message: 'Fetched posts successfully.', posts: result });
+    }
+    catch(err) {
+      if (!err.statusCode) {
+        err.statusCode = 500;
+      }
+      next(err);
+    }
+  };  
