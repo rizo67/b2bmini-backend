@@ -161,7 +161,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/b2bmini-backend/dev/1610206839687-2021-01-09T15:40:39.687Z/b2bmini-backend.zip"
+          "S3Key": "serverless/b2bmini-backend/dev/1613321115513-2021-02-14T16:45:15.513Z/b2bmini-backend.zip"
         },
         "Handler": "index.handler",
         "Runtime": "nodejs12.x",
@@ -186,14 +186,14 @@
         "AppLogGroup"
       ]
     },
-    "AppLambdaVersiongQoCqUqUeFTPDZ52Gk0hwiMYhCtiLUZgY1qftVYsZ4": {
+    "AppLambdaVersiontSl6lVeugXnfKWU68ZZPF5juprVFKKipQfWMgLq6sU": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "AppLambdaFunction"
         },
-        "CodeSha256": "yG2R7WmytQaXnHOGgcWIW1Y6cBNjBP1CJYUw6+oTBaE="
+        "CodeSha256": "P52LrIfVxF0TqwGMMW/rTXHkFGqtYmVj5kw+356OUBY="
       }
     },
     "ApiGatewayRestApi": {
@@ -405,7 +405,7 @@
         "MethodResponses": []
       }
     },
-    "ApiGatewayDeployment1610206815110": {
+    "ApiGatewayDeployment1613321097839": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -467,7 +467,7 @@
     "AppLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "AppLambdaVersiongQoCqUqUeFTPDZ52Gk0hwiMYhCtiLUZgY1qftVYsZ4"
+        "Ref": "AppLambdaVersiontSl6lVeugXnfKWU68ZZPF5juprVFKKipQfWMgLq6sU"
       }
     },
     "ServiceEndpoint": {
