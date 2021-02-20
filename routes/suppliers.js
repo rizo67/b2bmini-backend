@@ -15,5 +15,6 @@ router.put('/savesupplierimageurl', isAuth, authadmin, supplierController.imgurl
 router.put('/updatesupplier', isAuth, authadmin, supplierController.updateSupplier); // POST /supplier/updatesupplier
 router.post('/deletesupplier', isAuth, authadmin, supplierController.deleteSupplier); // POST /supplier/deletesupplier
 router.post('/onesupplier', isAuth, supplierController.getOneSupplier);  // POST /supplier/onesupplier
+router.post('/loadedsupplier', isAuth, supplierController.getLoadedSupplier);  // POST /supplier/loadedsupplier
 
 module.exports = router;
