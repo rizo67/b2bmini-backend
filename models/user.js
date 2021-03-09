@@ -225,6 +225,29 @@ saveOrganization() {
     });
 }
 
+saveRoles() {
+  const db = getDb();
+  let dbOp;
+  if (this._id) {
+    // Update the user
+    dbOp = db
+      .collection('users')
+      .updateOne({ _id: this._id },
+        {$set:{
+          role:this.role,
+          vendor:this.vendor,
+        }}
+        ); 
+  }
+  return dbOp
+    .then(result => {
+      console.log(result);
+    })
+    .catch(err => {
+      console.log(err);
+    });
+}
+
 deleteOrganization(post_id) {
   const db = getDb();
   let dbOp;

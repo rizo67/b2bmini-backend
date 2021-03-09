@@ -169,3 +169,43 @@ exports.signupUser = (req, res, next) => {
       next(err);
     }
   };  
+
+  exports.updateUserRole = async (req, res, next) => {
+    
+    const keresid = req.body.keresid;
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      const error = new Error('Validation failed, entered data is incorrect.');
+      error.statusCode = 422;
+      throw error;
+    }
+    
+    const role = req.body.role;
+    const vendor = req.body.vendor;
+    const _id = req.body.keresid;
+
+    const user = new User();
+    try{
+    const users = await user.getOneId(keresid)
+      //.then(suppliers => {
+        if (users._id.toString() !== req.body.keresid.toString()) {
+          const error = new Error('Could not find post.');
+          error.statusCode = 404;
+          throw error;
+        }
+        user.role = role;
+        user.vendor = vendor;
+        user._id = new ObjectId(keresid);
+      
+        const result = await user.saveRoles();
+      
+      //.then(result => {
+        res.status(200).json({ message: 'Az adatok mentése sikeresen megtörtént!', posts: result });
+      }
+      catch(err) {
+        if (!err.statusCode) {
+          err.statusCode = 500;
+        }
+        next(err);
+      }
+  };
