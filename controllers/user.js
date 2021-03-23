@@ -239,15 +239,6 @@ exports.signupUser = (req, res, next) => {
           creator,
         );
        
-        //const user = new User();
-        const findorgid = await user.getOneId(creator);
-        let filterorgid = findorgid.organizationid;  //ellenőrizzük, hogy van-e már szállító felvéve, csak akkor engedni menteni, ha nincs
-      
-          if (filterorgid !=null) {   //ellenőrizzük, hogy van-e már szállító felvéve, csak akkor engedni menteni, ha nincs
-            const error = new Error('A szállító már létezik');
-            error.statusCode = 404;
-            throw error;
-          }
         const resultsavesupplier = await supplier.saveSupplier();
         //.then(result => {
           let createdposts = resultsavesupplier.insertedId;
