@@ -20,13 +20,29 @@ exports.createSupplier = async (req, res, next) => {
       throw error;
     }
 
-    const title = req.body.title;
+    const title = req.body.orgname;
     const _id = req.body._id;
+    const orgtaxnumber = req.body.orgtaxnumber;
+    const lastname = req.body.lastname;
+    const firstname = req.body.firstname;
+    const orgcity = req.body.orgcity;
+    const orgstreet = req.body.orgstreet;
+    const orgzipcode = req.body.orgzipcode;
+    const orgother = req.body.orgother;
+    const orgphone = req.body.orgphone;
     let creator = req.userId;
     
     const supplier = new Supplier (
       title,
       _id,
+      orgtaxnumber,
+      lastname,
+      firstname,
+      orgcity,
+      orgstreet,
+      orgzipcode,
+      orgother,
+      orgphone,
       creator,
     );
    

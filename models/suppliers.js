@@ -4,9 +4,17 @@ const ObjectId = mongodb.ObjectId;
 
 class Supplier {
  
-    constructor(title, id, creator) {
+    constructor(title, id, orgtaxnumber, lastname, firstname, orgcity, orgstreet, orgzipcode, orgother,orgphone, creator) {
       this.title = title; 
       this._id = id ? new mongodb.ObjectId(id) : null; 
+      this.orgtaxnumber = orgtaxnumber;
+      this.lastname = lastname;
+      this.firstname = firstname;
+      this.orgcity = orgcity;
+      this.orgstreet = orgstreet;
+      this.orgzipcode = orgzipcode;
+      this.orgother = orgother;
+      this.orgphone = orgphone;
       this.creator = creator ? new mongodb.ObjectId(creator) : null;
           
     }
@@ -21,7 +29,15 @@ class Supplier {
             {$set:
               {
             title: this.title,
-            _id:this._id,           
+            _id: this._id,
+            orgtaxnumber: this.orgtaxnumber,
+            lastname: this.lastname,
+            firstname: this.firstname,
+            orgcity: this.orgcity,
+            orgstreet: this.orgstreet,
+            orgzipcode: this.orgzipcode,
+            orgother: this.orgother,
+            orgphone: this.orgphone,         
               }    
           }
             );
@@ -30,6 +46,14 @@ class Supplier {
             {
             title: this.title,
             _id:this._id,
+            orgtaxnumber: this.orgtaxnumber,
+            lastname: this.lastname,
+            firstname: this.firstname,
+            orgcity: this.orgcity,
+            orgstreet: this.orgstreet,
+            orgzipcode: this.orgzipcode,
+            orgother: this.orgother,
+            orgphone: this.orgphone,  
             creator: this.creator,            
         }
         );

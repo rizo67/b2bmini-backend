@@ -5,6 +5,7 @@ const User = require('../models/user');
 
 const feedController = require('../controllers/feed');
 const userController = require('../controllers/user');
+const supplierController = require('../controllers/suppliers');
 const isAuth = require('../middleware/is-auth');
 const authadmin = require('../middleware/authadmin');
 
@@ -51,9 +52,9 @@ router.post('/loginuser', userController.loginUser);  // POST /feed/loginuser
 
 router.post('/findemail', userController.getOneEmail); // POST /feed/findemail
 
-router.post('/findloadeduser', userController.getLoadedUser); // POST /feed/findloadeduser
+router.post('/findloadeduser', isAuth, userController.getLoadedUser); // POST /feed/findloadeduser
 
-router.post('/updateuserrole', userController.updateUserRole); // POST /feed/updateuserrole
+router.post('/updateuserrole', isAuth, userController.updateUserRole); // POST /feed/updateuserrole
 
 router.get('/findadmins', isAuth, authadmin, userController.getAdminUsers); // POST /feed/findadmins
 
