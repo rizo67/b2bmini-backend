@@ -192,17 +192,7 @@ exports.signupUser = (req, res, next) => {
       console.log(users);
         
       const resultroles = await user.saveRoles(); 
-      res.status(201).json({
-        message: 'Az adatok mentése sikeresen megtörtént!',
-        posts: resultroles
-      });
-    }
-    catch(err) {
-      if (!err.statusCode) {
-        err.statusCode = 500;
-      }
-      next(err);
-    }
+      
     
       //const keresid = req.body.keresid;
     const title = req.body.orgname;
@@ -217,8 +207,8 @@ exports.signupUser = (req, res, next) => {
     let creator = keresid;
     const _id = req.body._id;
   
-    try{
-    const users = await user.getOneId(keresid)
+  
+    //const users = await user.getOneId(keresid)
       //.then(suppliers => {
         if (users._id.toString() !== req.userId.toString()) {
           const error = new Error('Could not find post.');
@@ -256,7 +246,7 @@ exports.signupUser = (req, res, next) => {
           console.log(result, result2);
           res.status(201).json({
           message: 'Az adatok mentése sikeresen megtörtént!',
-          posts: result, result2
+          posts: resultroles, result, result2, 
         });
       }
       catch(err) {
